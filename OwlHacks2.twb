@@ -1,0 +1,944 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20183.20.0118.2122                               -->
+<workbook original-version='18.1' source-build='2018.3.14 (20183.20.0118.2122)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <IntuitiveSorting />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='bail_unw.csv+ (Multiple Connections)' inline='true' name='federated.1vxucki1yl8r5f11cpgar04vvybq' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='bail_unw' name='textscan.06hxr4u0h5pnqd151eo401q5wwsc'>
+            <connection class='textscan' directory='/Users/jaredstef/Downloads/OwlHacks Proj' filename='bail_unw.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='phila_race_dem' name='textscan.0g4wf9y01hdynj1d9txkz1ppytc9'>
+            <connection class='textscan' directory='/Users/jaredstef/Downloads/OwlHacks Proj' filename='phila_race_dem.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation join='full' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[bail_unw.csv].[F1]' />
+              <expression op='[phila_race_dem.csv].[race]' />
+            </expression>
+          </clause>
+          <relation join='full' type='join'>
+            <clause type='join'>
+              <expression op='='>
+                <expression op='[bail_unw.csv].[F1]' />
+                <expression op='[off_unw.csv].[F1]' />
+              </expression>
+            </clause>
+            <relation join='full' type='join'>
+              <clause type='join'>
+                <expression op='='>
+                  <expression op='[bail_unw.csv].[F1]' />
+                  <expression op='[bail_w.csv].[F1]' />
+                </expression>
+              </clause>
+              <relation join='full' type='join'>
+                <clause type='join'>
+                  <expression op='='>
+                    <expression op='[bail_unw.csv].[F1]' />
+                    <expression op='[off_w.csv].[F1]' />
+                  </expression>
+                </clause>
+                <relation connection='textscan.06hxr4u0h5pnqd151eo401q5wwsc' name='bail_unw.csv' table='[bail_unw#csv]' type='table'>
+                  <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                    <column datatype='string' name='F1' ordinal='0' />
+                    <column datatype='real' name='x' ordinal='1' />
+                  </columns>
+                </relation>
+                <relation connection='textscan.06hxr4u0h5pnqd151eo401q5wwsc' name='off_w.csv' table='[off_w#csv]' type='table'>
+                  <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                    <column datatype='string' name='F1' ordinal='0' />
+                    <column datatype='real' name='x' ordinal='1' />
+                  </columns>
+                </relation>
+              </relation>
+              <relation connection='textscan.06hxr4u0h5pnqd151eo401q5wwsc' name='bail_w.csv' table='[bail_w#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='F1' ordinal='0' />
+                  <column datatype='real' name='x' ordinal='1' />
+                </columns>
+              </relation>
+            </relation>
+            <relation connection='textscan.06hxr4u0h5pnqd151eo401q5wwsc' name='off_unw.csv' table='[off_unw#csv]' type='table'>
+              <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                <column datatype='string' name='F1' ordinal='0' />
+                <column datatype='real' name='x' ordinal='1' />
+              </columns>
+            </relation>
+          </relation>
+          <relation connection='textscan.0g4wf9y01hdynj1d9txkz1ppytc9' name='phila_race_dem.csv' table='[phila_race_dem#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='F1' ordinal='0' />
+              <column datatype='string' name='race' ordinal='1' />
+              <column datatype='real' name='percentage' ordinal='2' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[F1 (bail_w.csv)]' value='[bail_w.csv].[F1]' />
+          <map key='[F1 (off_unw.csv)]' value='[off_unw.csv].[F1]' />
+          <map key='[F1 (off_w.csv)]' value='[off_w.csv].[F1]' />
+          <map key='[F1 (phila_race_dem.csv)]' value='[phila_race_dem.csv].[F1]' />
+          <map key='[F1]' value='[bail_unw.csv].[F1]' />
+          <map key='[percentage]' value='[phila_race_dem.csv].[percentage]' />
+          <map key='[race]' value='[phila_race_dem.csv].[race]' />
+          <map key='[x (bail_w.csv)]' value='[bail_w.csv].[x]' />
+          <map key='[x (off_unw.csv)]' value='[off_unw.csv].[x]' />
+          <map key='[x (off_w.csv)]' value='[off_w.csv].[x]' />
+          <map key='[x]' value='[bail_unw.csv].[x]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[bail_unw.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[bail_unw.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>x</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[x]</local-name>
+            <parent-name>[bail_unw.csv]</parent-name>
+            <remote-alias>x</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[off_w.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[F1 (off_w.csv)]</local-name>
+            <parent-name>[off_w.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>x</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[x (off_w.csv)]</local-name>
+            <parent-name>[off_w.csv]</parent-name>
+            <remote-alias>x</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[bail_w.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[F1 (bail_w.csv)]</local-name>
+            <parent-name>[bail_w.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>x</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[x (bail_w.csv)]</local-name>
+            <parent-name>[bail_w.csv]</parent-name>
+            <remote-alias>x</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[off_unw.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[F1 (off_unw.csv)]</local-name>
+            <parent-name>[off_unw.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>x</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[x (off_unw.csv)]</local-name>
+            <parent-name>[off_unw.csv]</parent-name>
+            <remote-alias>x</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[phila_race_dem.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1 (phila_race_dem.csv)]</local-name>
+            <parent-name>[phila_race_dem.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>race</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[race]</local-name>
+            <parent-name>[phila_race_dem.csv]</parent-name>
+            <remote-alias>race</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>percentage</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[percentage]</local-name>
+            <parent-name>[phila_race_dem.csv]</parent-name>
+            <remote-alias>percentage</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='F1 (bail w.csv)' datatype='string' name='[F1 (bail_w.csv)]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;probability_2races&quot;' value='2+' />
+          <alias key='&quot;probability_american_indian&quot;' value='Native American' />
+          <alias key='&quot;probability_asian&quot;' value='Asian' />
+          <alias key='&quot;probability_black&quot;' value='African American' />
+          <alias key='&quot;probability_hispanic&quot;' value='Hispanic' />
+          <alias key='&quot;probability_white&quot;' value='Caucasian' />
+        </aliases>
+      </column>
+      <column caption='F1 (off unw.csv)' datatype='string' name='[F1 (off_unw.csv)]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;probability_2races&quot;' value='2+' />
+          <alias key='&quot;probability_american_indian&quot;' value='Native American' />
+          <alias key='&quot;probability_asian&quot;' value='Asian' />
+          <alias key='&quot;probability_black&quot;' value='African American' />
+          <alias key='&quot;probability_hispanic&quot;' value='Hispanic' />
+          <alias key='&quot;probability_white&quot;' value='Caucasian' />
+        </aliases>
+      </column>
+      <column caption='F1 (off w.csv)' datatype='string' name='[F1 (off_w.csv)]' role='dimension' type='nominal' />
+      <column caption='F1 (phila race dem.csv)' datatype='integer' name='[F1 (phila_race_dem.csv)]' role='measure' type='quantitative' />
+      <column datatype='string' name='[F1]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;probability_2races&quot;' value='2+' />
+          <alias key='&quot;probability_american_indian&quot;' value='Native American' />
+          <alias key='&quot;probability_asian&quot;' value='Asian' />
+          <alias key='&quot;probability_black&quot;' value='African American' />
+          <alias key='&quot;probability_hispanic&quot;' value='Hispanic' />
+          <alias key='&quot;probability_white&quot;' value='Caucasian' />
+        </aliases>
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Percentage' datatype='real' name='[percentage]' role='measure' type='quantitative' />
+      <column caption='Race' datatype='string' name='[race]' role='dimension' type='nominal' />
+      <column caption='X (Bail W.Csv)' datatype='real' name='[x (bail_w.csv)]' role='measure' type='quantitative' />
+      <column caption='X (Off Unw.Csv)' datatype='real' name='[x (off_unw.csv)]' role='measure' type='quantitative' />
+      <column caption='X (Off W.Csv)' datatype='real' name='[x (off_w.csv)]' role='measure' type='quantitative' />
+      <column caption='X' datatype='real' name='[x]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.474407' measure-ordering='alphabetic' measure-percentage='0.525593' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Bail Unw'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Predicted Race of Individuals Setting Bail</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='bail_unw.csv+ (Multiple Connections)' name='federated.1vxucki1yl8r5f11cpgar04vvybq' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1vxucki1yl8r5f11cpgar04vvybq'>
+            <column datatype='string' name='[F1]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;probability_2races&quot;' value='2+' />
+                <alias key='&quot;probability_american_indian&quot;' value='Native American' />
+                <alias key='&quot;probability_asian&quot;' value='Asian' />
+                <alias key='&quot;probability_black&quot;' value='African American' />
+                <alias key='&quot;probability_hispanic&quot;' value='Hispanic' />
+                <alias key='&quot;probability_white&quot;' value='Caucasian' />
+              </aliases>
+            </column>
+            <column-instance column='[F1]' derivation='None' name='[none:F1:nk]' pivot='key' type='nominal' />
+            <column-instance column='[x]' derivation='Sum' name='[sum:x:qk]' pivot='key' type='quantitative' />
+            <column caption='X' datatype='real' name='[x]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1vxucki1yl8r5f11cpgar04vvybq].[none:F1:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:F1:nk]' />
+              <groupfilter function='member' level='[none:F1:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <columns>
+            <shelf-sort direction='DESC' measure-to-sort-by='[federated.1vxucki1yl8r5f11cpgar04vvybq].[sum:x:qk]'>
+              <dimensions-to-sort>
+                <dimension>[federated.1vxucki1yl8r5f11cpgar04vvybq].[none:F1:nk]</dimension>
+              </dimensions-to-sort>
+            </shelf-sort>
+          </columns>
+          <slices>
+            <column>[federated.1vxucki1yl8r5f11cpgar04vvybq].[none:F1:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.1vxucki1yl8r5f11cpgar04vvybq].[sum:x:qk]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='omit-on-special' field='[federated.1vxucki1yl8r5f11cpgar04vvybq].[sum:x:qk]' value='false' />
+            <format attr='break-on-special' field='[federated.1vxucki1yl8r5f11cpgar04vvybq].[sum:x:qk]' value='false' />
+            <format attr='show-null-value-warning' field='[federated.1vxucki1yl8r5f11cpgar04vvybq].[sum:x:qk]' value='false' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#b07aa1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1vxucki1yl8r5f11cpgar04vvybq].[sum:x:qk]</rows>
+        <cols>[federated.1vxucki1yl8r5f11cpgar04vvybq].[none:F1:nk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Bail W'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Predicted Race of Individuals Setting Bail (Weighted by # Set)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='bail_unw.csv+ (Multiple Connections)' name='federated.1vxucki1yl8r5f11cpgar04vvybq' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1vxucki1yl8r5f11cpgar04vvybq'>
+            <column caption='F1 (bail w.csv)' datatype='string' name='[F1 (bail_w.csv)]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;probability_2races&quot;' value='2+' />
+                <alias key='&quot;probability_american_indian&quot;' value='Native American' />
+                <alias key='&quot;probability_asian&quot;' value='Asian' />
+                <alias key='&quot;probability_black&quot;' value='African American' />
+                <alias key='&quot;probability_hispanic&quot;' value='Hispanic' />
+                <alias key='&quot;probability_white&quot;' value='Caucasian' />
+              </aliases>
+            </column>
+            <column-instance column='[F1 (bail_w.csv)]' derivation='None' name='[none:F1 (bail_w.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[x (bail_w.csv)]' derivation='Sum' name='[sum:x (bail_w.csv):qk]' pivot='key' type='quantitative' />
+            <column caption='X (Bail W.Csv)' datatype='real' name='[x (bail_w.csv)]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1vxucki1yl8r5f11cpgar04vvybq].[none:F1 (bail_w.csv):nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:F1 (bail_w.csv):nk]' />
+              <groupfilter function='member' level='[none:F1 (bail_w.csv):nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <columns>
+            <shelf-sort direction='DESC' measure-to-sort-by='[federated.1vxucki1yl8r5f11cpgar04vvybq].[sum:x (bail_w.csv):qk]'>
+              <dimensions-to-sort>
+                <dimension>[federated.1vxucki1yl8r5f11cpgar04vvybq].[none:F1 (bail_w.csv):nk]</dimension>
+              </dimensions-to-sort>
+            </shelf-sort>
+          </columns>
+          <slices>
+            <column>[federated.1vxucki1yl8r5f11cpgar04vvybq].[none:F1 (bail_w.csv):nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.1vxucki1yl8r5f11cpgar04vvybq].[sum:x (bail_w.csv):qk]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#b07aa1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1vxucki1yl8r5f11cpgar04vvybq].[sum:x (bail_w.csv):qk]</rows>
+        <cols>[federated.1vxucki1yl8r5f11cpgar04vvybq].[none:F1 (bail_w.csv):nk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Off U'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Predicted Race of Arresting Officers</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='bail_unw.csv+ (Multiple Connections)' name='federated.1vxucki1yl8r5f11cpgar04vvybq' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1vxucki1yl8r5f11cpgar04vvybq'>
+            <column caption='F1 (off unw.csv)' datatype='string' name='[F1 (off_unw.csv)]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;probability_2races&quot;' value='2+' />
+                <alias key='&quot;probability_american_indian&quot;' value='Native American' />
+                <alias key='&quot;probability_asian&quot;' value='Asian' />
+                <alias key='&quot;probability_black&quot;' value='African American' />
+                <alias key='&quot;probability_hispanic&quot;' value='Hispanic' />
+                <alias key='&quot;probability_white&quot;' value='Caucasian' />
+              </aliases>
+            </column>
+            <column-instance column='[F1 (off_unw.csv)]' derivation='None' name='[none:F1 (off_unw.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[x (off_unw.csv)]' derivation='Sum' name='[sum:x (off_unw.csv):qk]' pivot='key' type='quantitative' />
+            <column caption='X (Off Unw.Csv)' datatype='real' name='[x (off_unw.csv)]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1vxucki1yl8r5f11cpgar04vvybq].[none:F1 (off_unw.csv):nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:F1 (off_unw.csv):nk]' />
+              <groupfilter function='member' level='[none:F1 (off_unw.csv):nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <columns>
+            <shelf-sort direction='DESC' measure-to-sort-by='[federated.1vxucki1yl8r5f11cpgar04vvybq].[sum:x (off_unw.csv):qk]'>
+              <dimensions-to-sort>
+                <dimension>[federated.1vxucki1yl8r5f11cpgar04vvybq].[none:F1 (off_unw.csv):nk]</dimension>
+              </dimensions-to-sort>
+            </shelf-sort>
+          </columns>
+          <slices>
+            <column>[federated.1vxucki1yl8r5f11cpgar04vvybq].[none:F1 (off_unw.csv):nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.1vxucki1yl8r5f11cpgar04vvybq].[sum:x (off_unw.csv):qk]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#e15759' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1vxucki1yl8r5f11cpgar04vvybq].[sum:x (off_unw.csv):qk]</rows>
+        <cols>[federated.1vxucki1yl8r5f11cpgar04vvybq].[none:F1 (off_unw.csv):nk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Off W'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Predicted Race of Arresting Officer (Weighted by # of Arrests) </run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='bail_unw.csv+ (Multiple Connections)' name='federated.1vxucki1yl8r5f11cpgar04vvybq' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1vxucki1yl8r5f11cpgar04vvybq'>
+            <column caption='F1 (off unw.csv)' datatype='string' name='[F1 (off_unw.csv)]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;probability_2races&quot;' value='2+' />
+                <alias key='&quot;probability_american_indian&quot;' value='Native American' />
+                <alias key='&quot;probability_asian&quot;' value='Asian' />
+                <alias key='&quot;probability_black&quot;' value='African American' />
+                <alias key='&quot;probability_hispanic&quot;' value='Hispanic' />
+                <alias key='&quot;probability_white&quot;' value='Caucasian' />
+              </aliases>
+            </column>
+            <column-instance column='[F1 (off_unw.csv)]' derivation='None' name='[none:F1 (off_unw.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[x (off_w.csv)]' derivation='Sum' name='[sum:x (off_w.csv):qk]' pivot='key' type='quantitative' />
+            <column caption='X (Off W.Csv)' datatype='real' name='[x (off_w.csv)]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1vxucki1yl8r5f11cpgar04vvybq].[none:F1 (off_unw.csv):nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:F1 (off_unw.csv):nk]' />
+              <groupfilter function='member' level='[none:F1 (off_unw.csv):nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <columns>
+            <shelf-sort direction='DESC' measure-to-sort-by='[federated.1vxucki1yl8r5f11cpgar04vvybq].[sum:x (off_w.csv):qk]'>
+              <dimensions-to-sort>
+                <dimension>[federated.1vxucki1yl8r5f11cpgar04vvybq].[none:F1 (off_unw.csv):nk]</dimension>
+              </dimensions-to-sort>
+            </shelf-sort>
+          </columns>
+          <slices>
+            <column>[federated.1vxucki1yl8r5f11cpgar04vvybq].[none:F1 (off_unw.csv):nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.1vxucki1yl8r5f11cpgar04vvybq].[sum:x (off_w.csv):qk]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#e15759' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1vxucki1yl8r5f11cpgar04vvybq].[sum:x (off_w.csv):qk]</rows>
+        <cols>[federated.1vxucki1yl8r5f11cpgar04vvybq].[none:F1 (off_unw.csv):nk]</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' name='Bail Unw'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1vxucki1yl8r5f11cpgar04vvybq].[none:F1:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{33A4286A-2FAA-45FA-8910-5196C79D53CF}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Bail W'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1vxucki1yl8r5f11cpgar04vvybq].[none:F1 (bail_w.csv):nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{0D53E2DA-08E1-4BFD-80E7-4C17C1D5352E}' />
+    </window>
+    <window class='worksheet' name='Off W'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1vxucki1yl8r5f11cpgar04vvybq].[none:F1 (off_unw.csv):nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{60E1789D-360F-4775-B723-A36A1DA0ED12}' />
+    </window>
+    <window class='worksheet' name='Off U'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <selection-collection>
+          <node-selection select-tuples='false'>
+            <oriented-node-reference orientation='vertical'>
+              <node-reference>
+                <axis>[federated.1vxucki1yl8r5f11cpgar04vvybq].[sum:x (off_unw.csv):qk]</axis>
+              </node-reference>
+              <page-reference />
+            </oriented-node-reference>
+          </node-selection>
+        </selection-collection>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1vxucki1yl8r5f11cpgar04vvybq].[none:F1 (off_unw.csv):nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{73D6D9BB-321C-4C14-B9EA-61F71A385C0B}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='384' name='Bail Unw' width='384'>
+      iVBORw0KGgoAAAANSUhEUgAAAYAAAAGACAYAAACkx7W/AAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAGlklEQVR4nO3ZPW70BBRA0fkLSUZE+jZBAxUboGXLrIICiZqKBSANdkKIzArGWMSKydxz
+      2mdZ7zVzJc9+mqZpB0DKfr/fH7ZeAoBtCABAlAAARAkAQJQAAEQJAECUAABE/WsA3t7ePmIP
+      AD6YAABE+QQEECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUA
+      AFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQ
+      JQAAUQIAECUAAFECABAlAABRAgAQdXrvC8Y//tz9+tPPa+yyiW9//H53/vL11msAfLh3B+D1
+      5XX3+y+/rbHLJr754bvd7svWWwB8PJ+AAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACi
+      BAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAok5LHrpc
+      Lldn4zCutswWxnHcHWfuA7hViwLw+Ph4dfb3/V+rLbOF+/v72fsAbtWiAByPx6uzw/Fzf0U6
+      HA6z9wHcqs/96w3AfyYAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIA
+      ECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABR
+      AgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUA
+      AFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQ
+      JQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFEC
+      ABAlAABRAgAQdVry0DAMV2cvz8+rLbOF55eX3d3MfQC3alEA7u7urr/gtOgV/1un43H2PoBb
+      9e4AHD97AE4nAQCS/AcAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAA
+      UQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAl
+      AABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIA
+      ECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABR
+      AgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUA
+      AFECABAlAABRpyUPTdM0N1xrl01M0zR/H8CNWhSAy+VydTYMw2rLbGEcx91x5j6AW7UoAE9P
+      T1dn0/i22jJbOJ/Ps/cB3Cr/AQBECQBAlAAARAkAQJQAAEQJAECUAABECQBAlAAARAkAQJQA
+      AEQJAECUAABECQBAlAAARAkAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJAECUAABECQBA
+      lAAARAkAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJ
+      AECUAABECQBAlAAARAkAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJAECUAABECQBAlAAA
+      RAkAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJAECU
+      AABECQBAlAAARAkAQJQAAEQJAEDUaclDl8vl6mwchtWW2cIwDLvj5aut1wD4cIsCcD6fr87e
+      Hl5XW2YLDw+Ps/cB3KpFATgcrn8p2h/2qy2zhcNhP3sfwK3yywcQJQAAUQIAECUAAFECABAl
+      AABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIA
+      ECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABR
+      AgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUA
+      AFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQ
+      JQAAUQIAECUAAFECABD1DwuMVh33DZaeAAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='384' name='Bail W' width='384'>
+      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
+      ECUAAFG/A9+nvbo+YMHqAAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='384' name='Off U' width='384'>
+      iVBORw0KGgoAAAANSUhEUgAAAYAAAAGACAYAAACkx7W/AAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAHO0lEQVR4nO3bS27jZhaAUcp6GfVo9CBZVjLOBrt30llOkARlSWXZZlYghuioTBS/c6b3
+      H9w78QeI8GYcx3EAIGWz2Wwell4CgGUIAECUAABECQBAlAAARAkAQJQAAET9bQBeX1/fYw8A
+      3pkAAET5CQggSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAA
+      ogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgajfn0fl8/tZ7APDOZgVg
+      u91+6z0AeGezAnA4HL71HgC8M98AAKIEACBKAACiBAAgSgAAogQAIEoAAKJm/R/AlJfffht+
+      /89/77HLIv79yy/D7scfll4D4N394wCMp9Nw+t+v99hlEf/6+adhGAQA6PETEECUAABECQBA
+      lAAARAkAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJ
+      AECUAABECQBAlAAARAkAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJAECUAABECQBAlAAA
+      RAkAQJQAAEQJAECUAABE7eY8GsdxYna3XZYxjpP3AazVrAB8+fLl5uz19HS3ZZbwdDoNu4n7
+      ANZqVgA+ffp0c3b9+HH4827rvL+PHz4O+4n7ANZqVgA2m83t2d1WWchm+j6AtfIRGCBKAACi
+      BAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoA
+      AKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAg
+      SgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAonZzHn39+vXm
+      7OV6vdsyS7her8M4cR/AWs0KwDiOt2dvt2ffg/FtnLwPYK1mBeDx8fHm7Ho83G2ZJRyOh+Ew
+      cR/AWvkGABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABR
+      AgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUA
+      AFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQ
+      JQAAUQIAECUAAFG7OY+enp5uzl7O57sts4Tz+TxcJ+4DWKtZAXh8fLw5ux6Pd1tmCcfDcdhP
+      3AewVrMCsN1ub87eHr7vX5Eetg+T9wGs1ff91xuA/5sAAEQJAECUAABECQBAlAAARAkAQJQA
+      AEQJAECUAABECQBAlAAARAkAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJAECUAABECQBA
+      lAAARAkAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJ
+      AECUAABECQBAlAAARAkAQJQAAEQJAECUAABECQBA1G7Oo9PpdHP2crncbZklXC6X4WXiPoC1
+      mhWA/X5/c7bZ3Z59D/a7/bCbuA9grf5xAIbd9l67LGK7207fB7BSvgEARAkAQJQAAEQJAECU
+      AABECQBAlAAARAkAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJAECUAABECQBAlAAARAkA
+      QJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJAECUAABE
+      CQBAlAAARAkAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJAECUAABE7eY8ent7uz0bx7st
+      s4TxbZy8D2CtZgXg6enp5uz1fL7bMks4X87D88R9AGs1KwCfP3++Obv+8cfw593WeX8fPnwY
+      DhP3AayVbwAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIA
+      ECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABR
+      AgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUA
+      AFECABAlAABRuzmPLpfLzdnr8/PdllnC8/Pz8DZxH8BazQrAZrOZmt5plWVshs3f3AewTrMC
+      cDweb84eDvu7LbOE/WE/HCbuA1gr3wAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIE
+      ACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAA
+      ogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBK
+      AACiBAAgSgAAogQAIEoAAKL+AjZ9jeZ3y3vhAAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='384' name='Off W' width='384'>
+      iVBORw0KGgoAAAANSUhEUgAAAYAAAAGACAYAAACkx7W/AAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAHTklEQVR4nO3ZUW7bBhZAUUqRIssJBvPRLqv97gZndjJdTtE2qaJakt0VkEM4hAnrnvP7
+      COG9H12A3Ly8vLwMAKRsNpvNdu0lAFiHAABECQBAlAAARAkAQJQAAEQJAEDU/w3A7XZ7iz0A
+      eGMCABDlFRBAlAAARAkAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJAECUAABECQBAlAAA
+      RAkAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJAECUAABECQBAlAAARAkAQJQAAEQJAECU
+      AABECQBAlAAARAkAQJQAAEQJAEDU7nt/4Prbb8Pv//nvErus4t+//DLsfvxh7TUA3tx3B+Dl
+      dBpO//t1iV1W8a+ffxqGQQCAHq+AAKIEACBq1iugL1++jM5uf50WW2YNp79Ow98T9wHcq1kB
+      +PTp0+js8ngc/lxsnbd3PB6H/cR9APdqVgC22/E3RdvNZrFl1rDZbibvA7hX/vkAogQAIEoA
+      AKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAg
+      SgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIE
+      ACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBqN+ehy+UyPrte
+      F1tmDdfLddhM3Adwr2YF4DrxJ3+73RZbZg23223YvPOIAbzGrAAcj8fR2eVwWGyZNRweDsPH
+      ifsA7pVvAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQ
+      JQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFEC
+      ABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAA
+      UQIAELWb89DXr19HZ7fTt8WWWcO307fhaeI+gHs1KwDH43F0dn04DH8sts7bOzwchv3EfQD3
+      alYAPnz4MDp73r7vt0jb7XbyPoB79b7/vQF4NQEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIA
+      gCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCI
+      EgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgB
+      AIgSAIAoAQCIEgCAKAEAiBIAgCgBAIjazXnoer2Oz263xZZZw+16m7wP4F7NCsDT09Po7Hq5
+      LLbMGi6Xy/AycR/AvZoVgMfHx9HZ5eFh+H2xdd7ew/Fh+DhxH8C98g0AIEoAAKIEACBKAACi
+      BAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoA
+      AKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAg
+      SgAAogQAIEoAAKIEACBKAACiBAAgSgAAogQAIEoAAKIEACBKAACiBAAgajfnodPpNDq7nc+L
+      LbOG8/k8XCfuA7hXswKw3+9HZ5vd+Ow92O12k/cB3KvvDsCw+7DULqsQAKDKNwCAKAEAiBIA
+      gCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCI
+      EgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgB
+      AIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIjazXno+fn5VbP3
+      4Pn5+d3fAPAaswJwOp1GZ7fzebFl1nA+n4frxH0A92pWAD5//jw6uzw+Dn8sts7be3x8HD5O
+      3Adwr3wDAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAo
+      AQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIA
+      gCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCIEgCAKAEAiBIAgCgBAIgSAIAoAQCI
+      EgCAKAEAiNrNeeh8Po/Ork9Piy2zhqe/n4bnifsA7tWsAGw2m1fN3oPNdvPubwB4jVkBOBwO
+      o7Ptfr/YMmvY7/fDx4n7AO6VbwAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAl
+      AABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQJQAAUQIA
+      ECUAAFECABAlAABRAgAQJQAAUQIAECUAAFECABAlAABRAgAQ9Q9n9ZjptsU9tgAAAABJRU5E
+      rkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
